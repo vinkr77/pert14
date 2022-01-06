@@ -24,8 +24,8 @@ interface ApiService {
     @POST("update.php")
     fun updateBarang(
         @Field("id") id: String?,
-        namaBarang: String,
-        jmlBarang: String
+        @Field("Nama_barang") namaBarang: String?,
+        @Field("Jumlah_barang") jmlBarang: String?
     ): Call<ResponseActionBarang>
 
     @FormUrlEncoded
@@ -33,4 +33,6 @@ interface ApiService {
     fun deleteBarang(
         @Field("id") id: String?
     ): Call<ResponseActionBarang>
+
+
 }
